@@ -10,7 +10,7 @@
         $colors[] = array( 'slug'=>'home_page_subtitle_text_color', 'default' => '#80652b', 'label' => __( 'Home Page Subtitle Text Color', 'aviator' ) );
         $colors[] = array( 'slug'=>'home_page_description_text_color', 'default' => '#ccc', 'label' => __( 'Home Page Description Text Color', 'aviator' ) );
         $colors[] = array( 'slug'=>'nav_link_color', 'default' => '#cdcecf', 'label' => __( 'Nav Link Color', 'aviator' ) );
-        $colors[] = array( 'slug'=>'active_nav_link_color', 'default' => '#ffd675', 'label' => __( 'Active Nav Link Color', 'aviator' ) );
+        $colors[] = array( 'slug'=>'current_nav_link_color', 'default' => '#ffd675', 'label' => __( 'Active Nav Link Color', 'aviator' ) );
 
         foreach($colors as $color)
         {
@@ -63,8 +63,8 @@
             .home-page h2 { color:  <?php echo get_option('home_page_subtitle_text_color'); ?>; }
             .home-page h3 { color:  <?php echo get_option('home_page_title_text_color'); ?>; }
             .home-page .description { color:  <?php echo get_option('home_page_description_text_color'); ?>; }
-            header a {color: <?php echo get_option('nav_link_color'); ?>;}
-            header li.current_page_item a {color: <?php echo get_option('active_nav_link_color'); ?>;}
+            header a, footer p {color: <?php echo get_option('nav_link_color'); ?>;}
+            header li.current_page_item a {color: <?php echo get_option('current_nav_link_color'); ?>;}
             .page-content h1,.page-content h2,.page-content h3 { color: <?php echo get_option('text_color'); ?>; }
         </style>
     <?php

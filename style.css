@@ -49,11 +49,16 @@ h2, h3 {
 .nav-container {
     float: left;
 }
+
 .main-container, .footer-container {
     width: 1000px;
-    margin: 40px auto;
+    margin: 0 auto;
     background-color: #000000;
     background-color: rgba(0, 0, 0, 0.5);
+}
+
+.main-container {
+    margin-top: 40px;
 }
 
 .main-container.home {
@@ -125,10 +130,14 @@ h1.page-header {
     max-width: 100%;
 }
 
+.footer-container {
+    margin-bottom: 40px;
+}
+
 .footer-container .wrapper {
     padding: 20px 60px;
 }
 
-.footer-container h3 {
+footer p {
     text-align: center;
 }
