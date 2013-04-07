@@ -1,19 +1,6 @@
 <?php
 
-//    if ( function_exists('register_sidebar') ) {
-//        register_sidebar(array(
-//            'name' => 'Footer Sidebar',
-//            'id' => 'aviator-footer-sidebar',
-//            'description' => 'Appears as the footer of each page',
-//            'before_widget' => '<li>',
-//            'after_widget' => '</li>',
-//            'before_title' => '<h1>',
-//            'after_title' => '</h1>'
-//        ));
-//    }
-
-    add_action( 'customize_register', 'aviator_customize_register' );
-
+    # Theme customization options
     function aviator_customize_register($wp_customize) {
         // Add Custom Colors
         $colors = array();
@@ -52,7 +39,10 @@
         $wp_customize->add_setting( 'site_description', array( 'default' => 'Longer description of site', 'type' => 'option', 'capability' => 'edit_theme_options' ));
         $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'site_description', array( 'label' => 'Description', 'section' => 'title_tagline', 'settings' => 'site_description' )));
     }
+    add_action( 'customize_register', 'aviator_customize_register' );
 
+
+    # Theme background image customization support
     if (function_exists('add_theme_support')) {
         $custom_background_support = array(
             'default-color'          => '000',
@@ -62,6 +52,7 @@
         add_theme_support( 'custom-background', $custom_background_support );
     }
 
+    # Theme custom CSS
     function aviator_customize_css()
     {
         ?>
@@ -79,10 +70,3 @@
     <?php
     }
     add_action( 'wp_head', 'aviator_customize_css');
-
-
-//    add_action( 'customize_register', 'aviator_customize_register' );
-
-//    if (function_exists('register_nav_menu')) {
-//        register_nav_menu( 'primary', 'Primary Menu' );
-//    }
